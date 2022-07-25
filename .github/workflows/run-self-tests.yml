@@ -15,10 +15,14 @@ jobs:
       with:
         ref: ${{ github.ref }}
 
+    - name: Check for kvm
+      run: sudo kvm-ok
+
     - name: Install vagrant
       run: sudo apt-get install -y virtualbox vagrant
 
     - name: Install python packages
       run: pip install ansible molecule pytest-testinfra python-vagrant molecule-vagrant
+
     - name: Run tests
       run: make test
