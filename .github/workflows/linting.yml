@@ -1,0 +1,16 @@
+name: Lints yaml files
+on:
+  push:
+    branches-ignore: master
+  pull_request:
+    branches-ignore: master
+jobs:
+  linting:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Install ansible-lint
+        run: sudo apt-get install -y ansible-lint
+
+      - name: Lint yaml files
+        run: find -name *.yml | xargs -n1 ansible-lint
