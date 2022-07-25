@@ -19,6 +19,6 @@ jobs:
       run: sudo apt-get install -y virtualbox vagrant
 
     - name: Install python packages
-      run: pip install ansible molecule pytest-infra python-vagrant molecule-vagrant
+      run: pip install ansible molecule pytest-testinfra python-vagrant molecule-vagrant
     - name: Run tests
       run: make test
