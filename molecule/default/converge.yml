@@ -5,7 +5,7 @@
   vars:
     mongo_bind_ip: 0.0.0.0
   roles:
-    - role: db
+    - role: kaineer.db
   # tasks:
   #   - name: "Include db"
   #     include_role:
