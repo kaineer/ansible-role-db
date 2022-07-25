@@ -16,7 +16,7 @@ jobs:
         ref: ${{ github.ref }}
 
     - name: Install vagrant
-      run: apt-get -y virtualbox vagrant
+      run: apt-get install -y virtualbox vagrant
 
     - name: Install python packages
       run: pip install ansible molecule pytest-infra python-vagrant molecule-vagrant
