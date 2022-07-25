@@ -1,9 +1,9 @@
 name: Lints yaml files
-on:
-  push:
-    branches-ignore: master
-  pull_request:
-    branches-ignore: master
+on: ["push"]
+  # push:
+  #   branches-ignore: master
+  # pull_request:
+  #   branches-ignore: master
 jobs:
   linting:
     runs-on: ubuntu-latest
