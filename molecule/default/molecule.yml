@@ -1,14 +1,27 @@
 ---
 dependency:
   name: galaxy
+
 driver:
-  name: vagrant
-  provider:
-    name: virtualbox
-lint: yamllint
+  name: delegated
+  options:
+    managed: False
+    login_cmd_template: 'docker exec -ti {instance} bash'
+    ansible_connection_options:
+      ansible_connection: docker
+
 platforms:
-  - name: instance
-    box: ubuntu/xenial64
+  - name: instance-docker
+
+# driver:
+#   name: docker
+#   # name: vagrant
+#   # provider:
+#   #   name: virtualbox
+# lint: yamllint
+# platforms:
+#   - name: instance
+#     box: ubuntu/xenial64
 provisioner:
   name: ansible
 verifier:
